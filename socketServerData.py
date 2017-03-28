@@ -67,6 +67,7 @@ def push():
         for i in clients:
             if i is not serversocket: # neposilat sam sobe
                 i.send("Curent date and time: " + str(datetime.datetime.now()) + '\n')
+                print "Time is:", str(datetime.datetime.now()) + '\n'
         time.sleep(10) # [s]
 
 

@@ -1,7 +1,7 @@
 import socket
 
 host = 'localhost'
-port = 9989
+port = 8899
 buf = 1024
 
 clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
