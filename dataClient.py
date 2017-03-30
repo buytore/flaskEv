@@ -5,7 +5,7 @@ import time
 s = socket.socket()         # Create a socket object
 #host = socket.gethostname() # Get local machine name
 host = 'localhost'
-port = 8899                # Reserve a port for your service.
+port = 8898                # Reserve a port for your service.
 print "The host is: " + host
 s.bind((host, port))        # Bind to the port
 
