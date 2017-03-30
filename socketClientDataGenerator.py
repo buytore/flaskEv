@@ -37,8 +37,8 @@ while 1:
     s.send(jsonString)
     #print 'Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + jsonString
     print jsonString
-    time.sleep(10)
-    d = s.recv(BUFF)
-    print "Received this from the SERVER: ", d
+    time.sleep(5)
+    #d = s.recv(BUFF)
+    #print "Received this from the SERVER: ", d
 
 s.close()

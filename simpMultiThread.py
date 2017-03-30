@@ -14,11 +14,11 @@ class Server(Thread):
         self.socket.bind(self.addr)
 
     def run(self):
-        self.socket.listen(5)
+        self.socket.listen(10)
         while True:
             print 'Waiting for connection..'
             client, caddr = self.socket.accept()
-            print 'Connected To',caddr
+            print 'Server Thread is Connected To',caddr
 
             data = client.recv(self.bufsize)
             if not data:
@@ -54,13 +54,13 @@ class Client(Thread):
             tcpClient.send(data)
 
 host = ''
-p1 = int(raw_input('Enter Port 1 : '))
-p2 = int(raw_input('Enter Port 2 : '))
+client1 = int(raw_input('Enter Client Port 1 : '))
+server2 = int(raw_input('Enter Server Port 2 : '))
 name = raw_input('Enter Your Name: ').strip()
 
 
-server = Server(host,p2,name)
-client = Client(host,p1,name)
+server = Server(host, server2, name)
+client = Client(host, client1, name)
 
 server.start()
 client.start()
