@@ -4,16 +4,11 @@ import time
 
 s = socket.socket()         # Create a socket object
 #host = socket.gethostname() # Get local machine name
-host = 'localhost'
-port = 8898                # Reserve a port for your service.
+host = '10.15.120.85'
+port = 8899                # Reserve a port for your service.
 print "The host is: " + host
-s.bind((host, port))        # Bind to the port
 
-s.listen(5)                 # Now wait for client connection.
-while True:
-   c, addr = s.accept()     # Establish connection with client.
-   print 'Got connection from', addr
-   c.send('<HTML><p>Thank you for connecting</p>')
-   newNum = randint(0, 100)
-   c.send("<p>Here's your random number" + str(newNum)+"</p>")
-   c.close()                # Close the connection
+s.connect((host, port))
+
+print s.recv(1024)
+s.close()
